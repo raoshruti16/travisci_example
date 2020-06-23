@@ -1,0 +1,16 @@
+language: go
+
+services:
+  - docker
+
+before_install:
+- docker build --no-cache -t travisci_example .
+- docker run travisci_example /go/src/github.com/raoshruti16/travisci_example/travisci_example.test
+- docker run travisci_example
+
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker images
+  - docker tag travisci_example:latest raoshruti16/travisci_example:latest
+  - docker push raoshruti16/travisci_example:latest
