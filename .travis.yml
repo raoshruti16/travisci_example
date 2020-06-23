@@ -13,4 +13,4 @@ script:
   - echo "s16s12r98" | docker login -u "shruti161298" --password-stdin
   - docker images
   - docker tag travisci_example:latest raoshruti16/travisci_example:latest
-  - docker push raoshruti16/travisci_example:latest
+  - docker push shruti161298/travisci_example:latest
