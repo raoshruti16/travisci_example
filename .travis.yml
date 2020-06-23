@@ -12,5 +12,5 @@ before_install:
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker images
-  - docker tag travisci_example:latest raoshruti16/travisci_example:latest
+  - docker tag travisci_example:latest shruti161298/travisci_example:latest
   - docker push shruti161298/travisci_example:latest
